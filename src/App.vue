@@ -1,28 +1,42 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<div id="app" class="bg-custom-white">
+		<header style="height: 35vh">
+			<nav class="flex justify-center font-display py-16">
+				<router-link
+					class="p-4 gradient-fifth text-gray-700 font-bold tracking-widest mr-4"
+					to="/"
+					>Home</router-link
+				>
+				<router-link
+					class="p-4 gradient-fifth text-gray-700 font-bold tracking-widest"
+					to="/user"
+					>Application
+				</router-link>
+			</nav>
+		</header>
+		<main class="min-h-screen">
+			<transition name="slide-fade">
+				<router-view></router-view>
+			</transition>
+		</main>
+	</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+	name: "App",
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.slide-fade-enter-active {
+	transition: all 0.3s ease;
+}
+.slide-fade-leave-active {
+	transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter,
+.slide-fade-leave-to {
+	opacity: 0;
 }
 </style>

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Peddana&family=Roboto:wght@300;400;700&display=swap');
+@tailwind base;
+
+
+input {
+     @apply outline-none
+}
+h1,h2,h3,h4 {
+     font-family: 'Raleway', sans-serif;
+}
+p {
+     font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+     @apply text-4xl;
+}
+
+h2 {
+     @apply text-2xl
+}
+
+h3 {
+     @apply text-lg
+}
+
+@tailwind components;
+@tailwind utilities;
+
+.gradient {
+     background: linear-gradient(45deg, #193450, #2f4f71);
+}
+
+.gradient-fifth {
+     background: linear-gradient(to right, #e2aa4a, #eb9a10);
+}
